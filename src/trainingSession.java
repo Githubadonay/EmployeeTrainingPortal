@@ -5,17 +5,16 @@ public class trainingSession {
     private String sessionTitle;
     private double totalDuration;
     private double currentNumOfParticipants;
-    private double maxNumOfParticipants;
 
     //Constructors 
     trainingSession(){
         this.sessionId = "";
         this.sessionTitle = "";
-        this.totalDuration = 0;
-        this.currentNumOfParticipants = 0;
-        this.maxNumOfParticipants = 0;
-
+        this.totalDuration = 10;
+        this.currentNumOfParticipants = 30;
     }
+
+
     
 
     //Accessors using set
@@ -23,14 +22,43 @@ public class trainingSession {
         if( !sessionId.equals("") )
             this.sessionId = sessionId;
     }
+
+    public void setSessionTitle(String sessionTitle){
+        if (!sessionTitle.equals(""))
+            this.sessionTitle = sessionTitle;
+    }
+
+    public void setTotalDuration(double totalDuration){
+        if(totalDuration < 10 )
+        this.totalDuration = totalDuration;
+    }
+
+    public void setCurrentNumOfParticipants(double currentNumOfParticipants){
+        if( currentNumOfParticipants < 30)
+        this.currentNumOfParticipants = currentNumOfParticipants;
+    }
     
+
     //Mutators using get
     public String getSessionId(){
         return sessionId;
     }
 
+    public String getSessionTitle(){
+        return sessionTitle;
+    }
+
+    public double getTotalDuration(){
+        return totalDuration;
+    }
+
+    public double getCurrentNumOfParticipants(){
+        return currentNumOfParticipants;
+    }
 
     //Method to calculate remaining seats( maximum participant - current participant) 
+
+
 
     //toString method 
     
