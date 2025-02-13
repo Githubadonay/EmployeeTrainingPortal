@@ -4,7 +4,7 @@ public class trainingSession {
     private String sessionId;
     private String sessionTitle;
     private double totalDuration;
-    private double currentNumOfParticipants;
+    private int currentNumOfParticipants;
 
     //Constructors 
     trainingSession(){
@@ -33,7 +33,7 @@ public class trainingSession {
         this.totalDuration = totalDuration;
     }
 
-    public void setCurrentNumOfParticipants(double currentNumOfParticipants){
+    public void setCurrentNumOfParticipants(int currentNumOfParticipants){
         if( currentNumOfParticipants < 30)
         this.currentNumOfParticipants = currentNumOfParticipants;
     }
@@ -52,14 +52,21 @@ public class trainingSession {
         return totalDuration;
     }
 
-    public double getCurrentNumOfParticipants(){
+    public int getCurrentNumOfParticipants(){
         return currentNumOfParticipants;
     }
 
     //Method to calculate remaining seats( maximum participant - current participant) 
-
+    public double remainingSeats(){
+        int maximum  = 30;
+        int availableSeats = maximum - currentNumOfParticipants;
+        return availableSeats;
+    };
 
 
     //toString method 
+    public String toString(){
+        return "Session Code: " + this.sessionId + " | " + "Title: " + this.sessionTitle + " | " + "Duration: " + this.totalDuration  + " | " + "Participants: " +  this.currentNumOfParticipants + " | " ;
+    }
     
 }
