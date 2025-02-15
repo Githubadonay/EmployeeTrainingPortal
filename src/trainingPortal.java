@@ -26,21 +26,29 @@ public class trainingPortal {
     public void setSessionId(String sessionId) {
         if (!sessionId.equals(""))
             this.sessionId = sessionId;
+        else 
+          throw new IllegalArgumentException( "Session ID can not be empty");
     }
 
     public void setSessionTitle(String sessionTitle) {
         if (!sessionTitle.equals(""))
             this.sessionTitle = sessionTitle;
+            else 
+          throw new IllegalArgumentException( "Session Titla can not be empty");
     }
 
     public void setTotalDuration(double totalDuration) {
         if (totalDuration > 0)
             this.totalDuration = totalDuration;
+            else 
+          throw new IllegalArgumentException( "Session duration can not be empty, and a negative number");
     }
 
     public void setCurrentNumOfParticipants(int currentNumOfParticipants) {
         if (currentNumOfParticipants > 0)
             this.currentNumOfParticipants = currentNumOfParticipants;
+            else 
+          throw new IllegalArgumentException( "Session Participants can not be empty, and a negative number");
     }
 
     // Accessors using get
